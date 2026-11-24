@@ -1,0 +1,33 @@
+{
+  "name": "shortus-script-judge",
+  "version": "0.1.0",
+  "private": true,
+  "description": "쇼더스 2단계 대본을 렌더 전에 판정하는 판정기",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "judge": "tsx src/cli.ts",
+    "auth:check": "tsx src/auth-check.ts",
+    "serve": "tsx src/server.ts",
+    "serve:replay": "tsx src/server.ts --replay",
+    "build:ext": "node scripts/build-extension.mjs",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p extension",
+    "eval": "tsx src/eval/cli.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.8.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.3.7",
+    "@types/node": "^26.6.6",
+    "esbuild": "^0.28.2",
+    "happy-dom": "^21.0.4",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0"
+  }
+}

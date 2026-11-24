@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>시안 비교</title>
+<style>
+:root{--ink:#1d1d1f;--sub:#5f5f66;--line:#d8d8dd;--paper:#ffffff;--code:#f5f5f7;--tab-light:#eceef1;--tab-dark:#2a2b2f;--tab-dark-ink:#e8e8ea;--guide:#c8102e}
+*{box-sizing:border-box}
+body{margin:0;padding:24px;background:var(--paper);color:var(--ink);font:14px/1.55 system-ui,"Malgun Gothic","Apple SD Gothic Neo",sans-serif;word-break:keep-all}
+h1{font-size:20px;line-height:1.35;margin:0 0 4px}
+.note{color:var(--sub);margin:0 0 20px}
+section{border-top:1px solid var(--line);padding:20px 0 28px}
+h2{font-size:16px;line-height:1.4;margin:0 0 14px}
+h2 small{font-size:12px;font-weight:400;color:var(--sub);margin-left:8px}
+.row{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-end}
+figure{margin:0}
+figcaption{font-size:12px;color:var(--sub);margin-top:8px;max-width:420px}
+.tabs{display:grid;gap:6px}
+.tab{display:flex;align-items:center;gap:8px;width:220px;height:34px;padding:0 12px;border-radius:8px 8px 0 0;font-size:12px;white-space:nowrap;overflow:hidden}
+.tab.light{background:var(--tab-light);color:var(--ink)}
+.tab.dark{background:var(--tab-dark);color:var(--tab-dark-ink)}
+.tab img{flex:none}
+.sizes{display:flex;gap:14px;align-items:flex-end;padding:12px;border:1px solid var(--line)}
+.sizes+.sizes{border-top:0}
+.sizes.dark{background:var(--tab-dark);border-color:var(--tab-dark)}
+.px{display:block;image-rendering:pixelated;border:1px solid var(--line)}
+.ios{display:block;border-radius:22.5%}
+.mask{position:relative;width:128px;height:128px;overflow:hidden}
+.mask img{display:block;width:128px;height:128px}
+.mask.circle{border-radius:50%}
+.mask.round{border-radius:24%}
+.safe{position:absolute;left:10%;top:10%;width:80%;height:80%;border:1.5px dashed var(--guide);border-radius:50%}
+.og{display:block;width:600px;height:315px;border:1px solid var(--line)}
+.crop{position:relative;overflow:hidden;border:1px solid var(--line)}
+.crop img{position:absolute;display:block;max-width:none}
+.crop.k{width:400px;height:200px}
+.crop.k img{width:400px;height:210px;left:0;top:-5px}
+.crop.sq{width:120px;height:120px}
+.crop.sq img{width:228.57px;height:120px;left:-54.29px;top:0}
+.screen img{display:block;height:auto;border:1px solid var(--line)}
+pre{margin:0;padding:14px;background:var(--code);border:1px solid var(--line);overflow:auto;font:12px/1.6 ui-monospace,Consolas,monospace}
+table{border-collapse:collapse;font-size:13px}
+th,td{border-bottom:1px solid var(--line);padding:6px 16px 6px 0;text-align:left;font-weight:400}
+td.num{text-align:right;font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body>
+<h1>시안 비교</h1>
+<p class="note">make-site-images.mjs compare가 만든 비교판이다. 배포하지 않는다.</p>
+<section>
+<h2>a<small>docs/design/icon-options/a.svg</small></h2>
+<div class="row">
+<figure><div class="tabs"><div class="tab light"><img src="renders/a-16.png" width="16" height="16" alt=""><span>a</span></div><div class="tab dark"><img src="renders/a-16-dark.png" width="16" height="16" alt=""><span>a</span></div></div><figcaption>브라우저 탭 16px (밝은 탭, 어두운 탭)</figcaption></figure>
+<figure><div class="sizes"><img src="renders/a-16.png" width="16" height="16" alt=""><img src="renders/a-32.png" width="32" height="32" alt=""><img src="renders/a-48.png" width="48" height="48" alt=""></div><div class="sizes dark"><img src="renders/a-16.png" width="16" height="16" alt=""><img src="renders/a-32.png" width="32" height="32" alt=""><img src="renders/a-48.png" width="48" height="48" alt=""></div><figcaption>16 · 32 · 48px 실제 크기</figcaption></figure>
+<figure><img class="px" src="renders/a-16.png" width="64" height="64" alt=""><figcaption>16px을 4배로</figcaption></figure>
+<figure><img class="ios" src="renders/a-180.png" width="90" height="90" alt=""><figcaption>iPhone 홈 화면 (바탕 #ffffff)</figcaption></figure>
+<figure><div class="mask circle"><img src="renders/a-mask.png" alt=""><i class="safe"></i></div><figcaption>안드로이드 원형 마스크. 점선 안이 안전 영역</figcaption></figure>
+<figure><div class="mask round"><img src="renders/a-mask.png" alt=""></div><figcaption>안드로이드 둥근 사각 마스크</figcaption></figure>
+</div>
+</section>
+<section>
+<h2>b<small>docs/design/icon-options/b.svg</small></h2>
+<div class="row">
+<figure><div class="tabs"><div class="tab light"><img src="renders/b-16.png" width="16" height="16" alt=""><span>b</span></div><div class="tab dark"><img src="renders/b-16-dark.png" width="16" height="16" alt=""><span>b</span></div></div><figcaption>브라우저 탭 16px (밝은 탭, 어두운 탭)</figcaption></figure>
+<figure><div class="sizes"><img src="renders/b-16.png" width="16" height="16" alt=""><img src="renders/b-32.png" width="32" height="32" alt=""><img src="renders/b-48.png" width="48" height="48" alt=""></div><div class="sizes dark"><img src="renders/b-16.png" width="16" height="16" alt=""><img src="renders/b-32.png" width="32" height="32" alt=""><img src="renders/b-48.png" width="48" height="48" alt=""></div><figcaption>16 · 32 · 48px 실제 크기</figcaption></figure>
+<figure><img class="px" src="renders/b-16.png" width="64" height="64" alt=""><figcaption>16px을 4배로</figcaption></figure>
+<figure><img class="ios" src="renders/b-180.png" width="90" height="90" alt=""><figcaption>iPhone 홈 화면 (바탕 #ffffff)</figcaption></figure>
+<figure><div class="mask circle"><img src="renders/b-mask.png" alt=""><i class="safe"></i></div><figcaption>안드로이드 원형 마스크. 점선 안이 안전 영역</figcaption></figure>
+<figure><div class="mask round"><img src="renders/b-mask.png" alt=""></div><figcaption>안드로이드 둥근 사각 마스크</figcaption></figure>
+</div>
+</section>
+<section>
+<h2>c<small>docs/design/icon-options/c.svg</small></h2>
+<div class="row">
+<figure><div class="tabs"><div class="tab light"><img src="renders/c-16.png" width="16" height="16" alt=""><span>c</span></div><div class="tab dark"><img src="renders/c-16-dark.png" width="16" height="16" alt=""><span>c</span></div></div><figcaption>브라우저 탭 16px (밝은 탭, 어두운 탭)</figcaption></figure>
+<figure><div class="sizes"><img src="renders/c-16.png" width="16" height="16" alt=""><img src="renders/c-32.png" width="32" height="32" alt=""><img src="renders/c-48.png" width="48" height="48" alt=""></div><div class="sizes dark"><img src="renders/c-16.png" width="16" height="16" alt=""><img src="renders/c-32.png" width="32" height="32" alt=""><img src="renders/c-48.png" width="48" height="48" alt=""></div><figcaption>16 · 32 · 48px 실제 크기</figcaption></figure>
+<figure><img class="px" src="renders/c-16.png" width="64" height="64" alt=""><figcaption>16px을 4배로</figcaption></figure>
+<figure><img class="ios" src="renders/c-180.png" width="90" height="90" alt=""><figcaption>iPhone 홈 화면 (바탕 #ffffff)</figcaption></figure>
+<figure><div class="mask circle"><img src="renders/c-mask.png" alt=""><i class="safe"></i></div><figcaption>안드로이드 원형 마스크. 점선 안이 안전 영역</figcaption></figure>
+<figure><div class="mask round"><img src="renders/c-mask.png" alt=""></div><figcaption>안드로이드 둥근 사각 마스크</figcaption></figure>
+</div>
+</section>
+</body>
+</html>

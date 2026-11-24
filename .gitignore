@@ -1,0 +1,10 @@
+node_modules/
+runs/
+extension/dist/
+.omc/
+.env
+.env.*
+!.env.example
+*.jwt
+*.log
+.DS_Store

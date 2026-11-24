@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="대본 판정">
+  <rect x="16" y="16" width="96" height="96" rx="18" fill="#202124"/>
+  <rect x="32" y="34" width="64" height="10" rx="5" fill="#ffffff"/>
+  <rect x="32" y="52" width="50" height="10" rx="5" fill="#ffffff"/>
+  <rect x="32" y="70" width="24" height="10" rx="5" fill="#f2a93b"/>
+  <rect x="32" y="88" width="56" height="10" rx="5" fill="#ffffff"/>
+</svg>

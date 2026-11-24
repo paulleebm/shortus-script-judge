@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "쇼더스 대본 판정 (비공식 프로토타입)",
+  "version": "0.1.0",
+  "description": "쇼더스 Studio 2단계 대본을 렌더 전에 판정해 점수와 다시 만들 섹션을 보여 줍니다. 이 PC에서 실행하는 로컬 판정 서버가 필요한 비공식 도구입니다.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAq6Kk7oHSJ1VuoMchxY/PUMWS8kXrmrqUkXQ0yW/MqQPdfAgbCVuc5LbQnPS05o8/erAf1CsilL5RXN7scLgBb1QYUiP+pI0ZtG6sQ4lqR203pKcoZDtc2djaJbCjVMaqRvJ3Nq7CQWAvrQbF9fNAM+STpnynWCdXsh6nwC4+5xHmqMNWytnh4zygHfCMrUYJ0nYFy4dTLVmYnNqQ+1Dpp/lFbnN8sPtA8pXdB75v1NithRoCffvtUDcjfG9y4f1aoU/KLGy+9A8iCbdeCJSrEKabNIR90w46pkY/WMgTfnXGX1e101fYVhrgm6FFS8xIRLUShoH/3GeTD9A7bnw7hQIDAQAB",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "background": {
+    "service_worker": "dist/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://shortus.viewus.co.kr/studio/*"
+      ],
+      "js": [
+        "dist/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:8787/*"
+  ]
+}
